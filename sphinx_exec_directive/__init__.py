@@ -58,7 +58,7 @@ def execute_code(runner, globals_dict=None):
 
         output_object = io.StringIO()
         with redirect_stdout(output_object):
-            exec(code, globals_dict)
+            exec(runner['code_in'], globals_dict)
         code_out = output_object.getvalue()
 
     elif runner['process'] == 'haskell':
